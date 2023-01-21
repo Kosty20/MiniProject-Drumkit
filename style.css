@@ -17,56 +17,65 @@ body{
 .key{
     aspect-ratio: 1;
     width: 100px;
-    background-color: orange;
+    background-color: rgb(255, 120, 0);
     border-radius: 100%;
+    cursor: pointer;
     
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
 
     position: absolute;
     right: 0;
+
+    container-type: inline-size;
 }
 
 .key:first-of-type{
     top: 1vh;
-    left: 1vh;
-    width: 10vh;
+    left: 1vw;
+    width: 20vw;
 }
 .key:nth-of-type(2){
-    top: 5vh;
-    left: 10vh;
-    width: 20vh;
+    top: 18vh;
+    left: 20vw;
+    width: 22vw;
 }
 .key:nth-of-type(3){
-    top: 15vh;
-    right: 20vh;
+    top: 3vh;
+    right: 5vw;
+    width: 19vw;
 }
 .key:nth-of-type(4){
     top: 60vh;
-    left: 50vh;
+    left: 50vw;
+    width: 17vw;
 }
 .key:nth-of-type(5){
     top: 40vh;
-    left: 70vh;
+    left: 70vw;
+    width: 14vw;
 }
 .key:nth-of-type(6){
-    top: 20vh;
-    left: 40vh;
+    top: 10vh;
+    left: 45vw;
+    width: 21vw;
 }
 .key:nth-of-type(7){
     top: 45vh;
-    left: 15vh;
+    left: 5vw;
+    width: 15vw;
 }
 .key:nth-of-type(8){
-    top: 85vh;
-    left: 85vh;
+    bottom: 5vh;
+    right: 5vw;
+    width: 14vw;
 }
 .key:last-of-type{
-    left: 20vh;
-    bottom: 10vh;
+    left: 30vw;
+    bottom: 7vh;
+    width: 13vw;
 }
 
 .key>span{
@@ -76,10 +85,73 @@ body{
     font-weight: 900;
 }
 .key:active{
-    filter: brightness(.8);
     transform: scale(.99);
+    border: 3px solid white;
 }
 .key.active{
-    filter: brightness(.8);
+    transform: scale(.99);
+    border: 3px solid white;
 }
 
+@container (min-width:0px){
+    span{
+        font-size: 18cqw;
+    }
+}
+
+@media (orientation:portrait){
+    .key:first-of-type{
+        right: 1vw;
+        top: 1vh;
+        left: initial;
+        width: 20vh;
+    }
+    .key:nth-of-type(2){
+        right: 18vw;
+        top: 20vh;
+        left: initial;
+        width: 22vh;
+    }
+    .key:nth-of-type(3){
+        right: 3vw;
+        top: initial;
+        bottom: 5vh;
+        width: 19vh;
+    }
+    .key:nth-of-type(4){
+        right: 60vw;
+        top: 50vh;
+        left: initial;
+        width: 17vh;
+    }
+    .key:nth-of-type(5){
+        right: 40vw;
+        top: 70vh;
+        left: initial;
+        width: 14vh;
+    }
+    .key:nth-of-type(6){
+        right: 10vw;
+        top: 45vh;
+        left: initial;
+        width: 21vh;
+    }
+    .key:nth-of-type(7){
+        right: 45vw;
+        top: 5vh;
+        left: initial;
+        width: 15vh;
+    }
+    .key:nth-of-type(8){
+        left: 5vw;
+        bottom: 5vh;
+        right: initial;
+        width: 14vh;
+    }
+    .key:last-of-type{
+        top: 30vh;
+        left: 7vw;
+        bottom: initial;
+        width: 13vh;
+    }
+}
