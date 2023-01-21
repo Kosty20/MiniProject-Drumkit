@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+
+    user-select: none;
+}
+
+body{
+    background-color:darkmagenta;
+    height: 100vh;
+}
+
+body,
+.container,
+.key{
+    display: flex;
+    margin: auto;
+}
+
+.container{
+    background-color: white;
+    max-width: 900px;
+    width: 90%;
+    max-height: 400px;
+    height: 90%;
+    border: 5px solid white;
+    gap: 1vw;
+}
+
+.key{
+    container-type:inline-size;
+
+    background-color: orange;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+}
+.key>span{
+    margin: auto;
+    font-family: 'Orbitron', sans-serif;
+}
+.key>span:first-of-type{
+    font-weight: 900;
+}
+.key:active{
+    filter: brightness(.8);
+}
+.key.active{
+    filter: brightness(.8);
+}
+
+@media (orientation: portrait){
+    .container{
+        max-height: fit-content;
+        flex-direction: column;
+    }
+}
+
+@media (orientation: landscape){
+    @container (max-width: 500px){
+        span:first-of-type{
+            font-size: 30cqw;
+        }
+        .key:nth-of-type(4)>span:first-of-type{
+            font-size: 17cqw;
+        }
+        .key:nth-of-type(2)>span:first-of-type,
+        .key:nth-of-type(5)>span:first-of-type,
+        .key:nth-of-type(7)>span:first-of-type{
+            font-size: 25cqw;
+        }
+    }
+}
+
