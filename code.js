@@ -1,16 +1,15 @@
 
 const keyBtn = document.querySelectorAll('.key');
-const audioElement = new Audio('sounds/clap.wav');
+
 
 window.onkeydown = (e) => {
     for(btn of keyBtn){
         if(btn.dataset.key === e.code){
+            const keyAudio = new Audio(btn.dataset.sound);
+            keyAudio.currentTime = 0;
+            keyAudio.play();
             btn.classList.add('active');
         }
-    }
-
-    switch(e.code){
-        case 'KeyA': audioElement.currentTime = 0; audioElement.play();
     }
 }
 window.onkeyup = (e) => {
@@ -20,3 +19,11 @@ window.onkeyup = (e) => {
         }
     }
 }
+
+keyBtn.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const clickAudio = new Audio(btn.dataset.sound);
+        clickAudio.currentTime = 0;
+        clickAudio.play();
+    })
+})
